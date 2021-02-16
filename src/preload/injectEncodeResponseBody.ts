@@ -13,7 +13,7 @@ const injectEncodeResponseBody: PreloadFunc = conditional(
   ({ ResponseBody }) => ResponseBody instanceof Object,
   mapProperty('ResponseBody', 'encodeResponseBody', (_) => (responseBody: {}) => ({
     body: JSON.stringify(responseBody),
-    headerrs: { 'content-type': 'application/json' },
+    headers: { 'content-type': 'application/json' },
   }))
 );
 
